@@ -1,0 +1,136 @@
+.content {
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  width: 100%;
+  flex-wrap: wrap; 
+}
+
+.input_group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  margin-bottom: 1rem;
+  font-size: 0.8rem;
+  position: relative;
+}
+
+.input_group  input {
+  border-radius: 4px;
+  border: 1px solid #dcddec;
+  width: 100%;
+  padding: 0.5rem;
+  padding-left: 1.3rem;
+}
+
+.input_wrapper {
+  position: relative;
+}
+
+.input_with_icon {
+  padding-left: 20px; 
+  width: 100%;
+}
+
+.input_group:nth-of-type(1) .input_wrapper::before {
+  content: url("/origin.svg");
+}
+
+.input_group:not(:nth-of-type(1)):not(:last-of-type) .input_wrapper::before {
+  content: url("/stop.svg");
+}
+
+.input_group:last-of-type .input_wrapper::before {
+  content: url("/destination.svg");
+}
+
+.input_wrapper::before {
+  position: absolute;
+  left: 1px;
+  top: 58%;
+  transform: translateY(-50%);
+  font-size: 16px;
+  color: #000;
+}
+
+
+.suggestions_list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border: 1px solid #ccc;
+  max-height: 200px;
+  padding: 0.4rem;
+  overflow-y: auto;
+  background-color: #fff;
+  position: absolute;
+  z-index: 1000;
+  width: inherit;
+  font-size: 0.7rem;
+  border-radius: 10px;
+  top: 60px;
+}
+
+.suggestions_list li {
+  padding: 10px;
+  cursor: pointer;
+}
+
+.suggestions_list li:hover {
+  background-color: #f0f0f0;
+}
+
+.form_container {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+}
+
+.btn_container {
+  display: flex;
+  height: inherit;
+  align-items: center;
+}
+
+.btn {
+  background-color: #1b31a8;
+  padding: 0.9rem;
+  color: white;
+  border-radius: 2rem;
+  font-weight: bold;
+  font-size: 0.8rem;
+  cursor: pointer;
+  border: 0;
+  align-self: center; 
+}
+
+
+@media (max-width: 900px) {
+  .content {
+    flex-direction: column;
+    justify-content: center; 
+    gap: 1rem;
+    align-items: center; 
+  }
+
+  .form_container {
+    width: 100%; 
+    margin-bottom: 0rem; 
+    align-items: center;
+  }
+
+  .input_group {
+    width: 90%;
+  }
+
+  .input_group > input {
+    width: 100%; 
+  }
+
+  .btn {
+    width: 100%; 
+    margin-top: 0rem; 
+    padding: 1rem 1.5rem;
+  }
+}
+
